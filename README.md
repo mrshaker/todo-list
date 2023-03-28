@@ -6,7 +6,8 @@ It's a simple todo-list that uses MongoDB on Atlas Cloud service.
 
 # Introduction
 
-First of all register on MongoDB Atlas service and make your cluster, then get your Username and Password and cluster address (more information in MongoDB Doc). Then import them in .env file the following:
+First of all register on MongoDB Atlas service and make your cluster, then get your Username and Password and cluster address (more information in MongoDB Doc).
+Then import them in .env file the following:
 
 USER_NAME=yourUserName
 
