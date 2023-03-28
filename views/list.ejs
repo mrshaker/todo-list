@@ -1,0 +1,58 @@
+<%- include("header") -%>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/">To Do List</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Groups
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <% listTitleNames.forEach(function(title){ %>
+          <a class="dropdown-item" href="<%="/" + title.name%>"> <%=title.name%> </a>
+          <% }); %>
+        </div>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0 " action="/addgroup" method="post">
+      <input class="form-control mr-sm-2" type="text" name="customListName" placeholder="Add new group">
+      <button class="custom-btn btn btn-outline-light btn-dark my-2 my-sm-0" type="submit">+</button>
+    </form>
+  </div>
+</nav>
+
+
+<div class="box" id="heading">
+  <h1> <%= listTitle %> </h1>
+  <form action="/remove-group" method="post">
+      <button class="custom-btn remove-btn btn btn-outline-light btn-dark my-2 my-sm-0" type="submit" name="title" value="<%= listTitle %>">-</button>
+  </form>
+</div>
+
+
+<div class="box">
+
+  <%  newListItems.forEach(function(item){ %>
+
+  <form action="/delete" method="post">
+    <div class="item">
+      <input type="checkbox" name="checkbox" value="<%=item._id%>" onChange="this.form.submit()">
+      <p><%=item.name%></p>
+    </div>
+    <input type="hidden" name="listName" value="<%= listTitle %>"></input>
+  </form>
+  <%  }); %>
+
+
+  <form class="item" action="/" method="post">
+    <input type="text" name="newItem" placeholder="New Item" autocomplete="off">
+    <button type="submit" name="list" value="<%= listTitle %>">+</button>
+  </form>
+</div>
+
+
+<%- include("footer") -%>
