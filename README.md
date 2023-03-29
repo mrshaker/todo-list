@@ -24,6 +24,4 @@ check, localhost:3000
 
 Finally, you can insert your to-do list in the front end and survey your data in the MongoDB Atlas cluster.
 
-![image](https://user-images.githubusercontent.com/50785245/228241053-3e673713-0fed-4401-a6ef-5bf546939279.png)
-
-
+![2023-03-28_16-05-04](https://user-images.githubusercontent.com/50785245/228515287-485117f7-25e9-4e9b-99c4-a6e20f022704.jpg)
