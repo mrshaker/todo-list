@@ -19,6 +19,9 @@ Then,
 npm init
 npm run start
 ```
+
+check, localhost:3000
+
 Finally, you can insert your to-do list in the front end and survey your data in the MongoDB Atlas cluster.
 
 ![image](https://user-images.githubusercontent.com/50785245/228241053-3e673713-0fed-4401-a6ef-5bf546939279.png)
